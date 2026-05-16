@@ -78,7 +78,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-full bg-zinc-50 font-sans dark:bg-zinc-950">
-      <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <header className="mb-8 border-b border-zinc-200 pb-6 dark:border-zinc-800">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
             助成財団 Google 検索ランチャー
@@ -95,14 +95,8 @@ export default async function Home() {
               <tr>
                 <th className="w-12 px-3 py-3">#</th>
                 <th className="px-3 py-3">法人名</th>
-                <th className="hidden w-28 px-3 py-3 text-right md:table-cell">
-                  年間助成額
-                  <br />
-                  <span className="font-normal normal-case text-[10px] text-zinc-500">
-                    (百万円)
-                  </span>
-                </th>
-                <th className="w-56 px-3 py-3 text-center">Google 検索</th>
+
+                <th className="w-[36rem] px-3 py-3 text-center">Google 検索</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
@@ -126,16 +120,13 @@ export default async function Home() {
                       </span>
                     </div>
                   </td>
-                  <td className="hidden px-3 py-3 text-right tabular-nums text-zinc-700 dark:text-zinc-300 md:table-cell">
-                    {f.annualGrant}
-                  </td>
                   <td className="px-3 py-3">
-                    <div className="flex flex-col gap-1.5 sm:flex-row sm:justify-center">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:justify-stretch">
                       <a
                         href={googleSearchUrl(f.name, "奨学金")}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-md bg-blue-600 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-blue-700"
+                        className="inline-flex flex-1 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
                       >
                         +奨学金
                       </a>
@@ -143,9 +134,17 @@ export default async function Home() {
                         href={googleSearchUrl(f.name, "研究助成金")}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-emerald-700"
+                        className="inline-flex flex-1 items-center justify-center rounded-md bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-700"
                       >
                         +研究助成金
+                      </a>
+                      <a
+                        href={googleSearchUrl(f.name, "国際奨学金")}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex flex-1 items-center justify-center rounded-md bg-amber-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-amber-700"
+                      >
+                        +国際奨学金
                       </a>
                     </div>
                   </td>
