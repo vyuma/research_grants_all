@@ -69,7 +69,7 @@ async function loadFoundations(): Promise<Foundation[]> {
 }
 
 function googleSearchUrl(name: string, suffix: string): string {
-  const query = `${name} +${suffix}`;
+  const query = `${name} ${suffix}`;
   return `https://www.google.com/search?q=${encodeURIComponent(query)}`;
 }
 
